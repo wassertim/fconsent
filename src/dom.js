@@ -1,4 +1,4 @@
-const cmpContainerIds = [
+const cmpContainerIds = [    
     'sp_message_container_',
     'consentBanner',
     'gdpr-banner'
