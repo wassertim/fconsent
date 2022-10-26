@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dist": "mkdir -p dist && git archive --format zip --output ./dist/$(git describe --tags --always).zip HEAD"
   },
   "devDependencies": {
     "@types/expect-puppeteer": "^5.0.1",
