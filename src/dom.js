@@ -1,7 +1,8 @@
 const cmpContainerIds = [    
     'sp_message_container_',
     'consentBanner',
-    'gdpr-banner'
+    'gdpr-banner',
+    'usercentrics-root'
 ];
 const cmpContainerClasses = [
     'truste_overlay',
