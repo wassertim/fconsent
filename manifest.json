@@ -1,7 +1,7 @@
 {
     "name": "FConsent",
     "description": "FConsent is a simple extension that allows you to easily automate your consent to multiple websites.",        
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "content_scripts": [
         {
