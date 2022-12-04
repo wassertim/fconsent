@@ -13,7 +13,7 @@ const cmpContainerSelectors = cmpContainerIds.map(e => `[id*="${e}"]`).join(', '
 const cmpContainerSelectors2 = cmpContainerClasses.map(e => `.${e}`).join(', ');
 const selector = cmpContainerSelectors + ', ' + cmpContainerSelectors2;
 
-export function removeCmp(cmpElements) {    
+export function removeCmp(cmpElements: NodeListOf<Element>) {    
     if (cmpElements.length > 0) {
         cmpElements.forEach(e => e.remove());
 
@@ -27,8 +27,11 @@ export function getCmpElements() {
     return document.querySelectorAll(selector);
 }
 
-export function observeForCMP(fn) {
+export function observeForCMP(fn: (elements: NodeListOf<Element>) => void) {
     const body = document.querySelector('body');
+    if (!body) {
+        return;
+    }
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function () {
             const cmpElements = getCmpElements();
