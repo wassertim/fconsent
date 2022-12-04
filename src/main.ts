@@ -1,11 +1,6 @@
 import { removeCmp, observeForCMP, getCmpElements } from './dom.js';
 
-const ignoreList = ['local.auspreiser.de'];
-
-export function main() {
-    if (ignoreList.includes(window.location.hostname)) {
-        return;
-    }    
+export function main() {    
     const cmpElements = getCmpElements();
     if (cmpElements.length > 0) {
         removeCmp(cmpElements);
