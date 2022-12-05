@@ -1,23 +1,15 @@
-const cmpContainerIds = [
-    'sp_message_container_',
-    'consentBanner',
-    'gdpr-banner',
-    'usercentrics-root'
-];
-const cmpContainerClasses = [
-    'truste_overlay',
-    'truste_box_overlay'
-];
-const otherSelectors = [
+const selector = [
+    '.truste_overlay',
+    '.truste_box_overlay',
     '[class*="cookie-consent-CookieConsent-bottomSheet"]', 
     '[data-qa="bottom-sheet-dimmer"]', 
     '[aria-labelledby="overlay content"]',
-    '[data-qa="pop-up-window-dimmer"]'
-];
-
-const cmpContainerSelectors = cmpContainerIds.map(e => `[id*="${e}"]`).join(', ');
-const cmpContainerSelectors2 = cmpContainerClasses.map(e => `.${e}`).join(', ');
-const selector = cmpContainerSelectors + ', ' + cmpContainerSelectors2 + ', ' + otherSelectors.join(', ');
+    '[data-qa="pop-up-window-dimmer"]',
+    '[id*="sp_message_container_"]',
+    '[id*="consentBanner"]',
+    '[id*="gdpr-banner"]',
+    '[id*="usercentrics-root"]'
+].join(', ');
 
 export function removeCmp(cmpElements: NodeListOf<Element>) {
     if (cmpElements.length > 0) {
