@@ -8,10 +8,16 @@ const cmpContainerClasses = [
     'truste_overlay',
     'truste_box_overlay'
 ];
+const otherSelectors = [
+    '[class*="cookie-consent-CookieConsent-bottomSheet"]', 
+    '[data-qa="bottom-sheet-dimmer"]', 
+    '[aria-labelledby="overlay content"]',
+    '[data-qa="pop-up-window-dimmer"]'
+];
 
 const cmpContainerSelectors = cmpContainerIds.map(e => `[id*="${e}"]`).join(', ');
 const cmpContainerSelectors2 = cmpContainerClasses.map(e => `.${e}`).join(', ');
-const selector = cmpContainerSelectors + ', ' + cmpContainerSelectors2;
+const selector = cmpContainerSelectors + ', ' + cmpContainerSelectors2 + ', ' + otherSelectors.join(', ');
 
 export function removeCmp(cmpElements: NodeListOf<Element>) {
     if (cmpElements.length > 0) {
