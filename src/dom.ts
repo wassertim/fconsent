@@ -1,4 +1,4 @@
-const cmpContainerIds = [    
+const cmpContainerIds = [
     'sp_message_container_',
     'consentBanner',
     'gdpr-banner',
@@ -13,7 +13,7 @@ const cmpContainerSelectors = cmpContainerIds.map(e => `[id*="${e}"]`).join(', '
 const cmpContainerSelectors2 = cmpContainerClasses.map(e => `.${e}`).join(', ');
 const selector = cmpContainerSelectors + ', ' + cmpContainerSelectors2;
 
-export function removeCmp(cmpElements: NodeListOf<Element>) {    
+export function removeCmp(cmpElements: NodeListOf<Element>) {
     if (cmpElements.length > 0) {
         cmpElements.forEach(e => e.remove());
 
